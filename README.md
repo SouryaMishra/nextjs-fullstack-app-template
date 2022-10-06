@@ -53,3 +53,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Install `storybook` and add configuration.<br>
   `npx sb init --builder webpack5`
 - Add webpack-5 to `resolutions` in package.json and do a `yarn install`
+- Install `storybook-addon-sass-postcss` and add it to the addons array inside `.storybook/main.js` to make storybook work with scss. Make sure that PostCSS 8+ is installed first.
