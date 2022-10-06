@@ -32,3 +32,24 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Steps for setup
+
+- Add engine locking by creating .npmrc and .nvmrc files in the project root directory and adding "engines" in package.json.
+- Add ESLint configuration (.eslintrc.json)
+- Add Stylelint configuration (.stylelintrc.json). PostCSS must be installed first for Stylelint to work.
+- Add Prettier configuration (.prettierrc, .prettierignore)
+- Add lint-staged configuration ("lint-staged" in package.json)
+- Add Husky, pre-commit and pre-push hooks
+  `npx husky add .husky/pre-commit "yarn lint-staged"`
+  `npx husky add .husky/pre-push "yarn build"`
+- Add prepare script in package.json so that husky installs the git hooks automatically.
+- Add commitlint configuration (commitlint.config.js) and commit-msg git hook.
+  `npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'`
+- Add project settings in .vscode/settings.json in the project root directory.
+- Add debugging settings in .vscode/launch.json in the project root directory.
+- Install cross-env
+- Install sass
+- Install storybook and add configuration
+  `npx sb init --builder webpack5`
+- Add webpack-5 to "resolutions" in package.json and do a `yarn install`
