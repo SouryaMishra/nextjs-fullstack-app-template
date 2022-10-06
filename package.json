@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "lint:style": "stylelint **/*.{css,scss}",
+    "lint-fix:style": "yarn lint:style --fix",
     "format": "prettier --write .",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6007",
@@ -40,6 +41,7 @@
     "eslint-plugin-storybook": "^0.6.4",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "postcss": "^8.4.17",
     "prettier": "^2.7.1",
     "sass": "^1.55.0",
     "stylelint": "^14.13.0",
@@ -54,8 +56,9 @@
   "lint-staged": {
     "*.{js,ts,tsx,md}": [
       "prettier --write",
-      "eslint"
-    ]
+      "eslint --fix"
+    ],
+    "*.{css,scss}": "stylelint --fix"
   },
   "resolutions": {
     "webpack": "^5"
