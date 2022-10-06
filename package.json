@@ -10,7 +10,7 @@
     "lint:style": "stylelint **/*.{css,scss}",
     "format": "prettier --write .",
     "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6007",
     "build-storybook": "build-storybook"
   },
   "dependencies": {
