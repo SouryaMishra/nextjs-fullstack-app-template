@@ -35,21 +35,21 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Steps for setup
 
-- Add engine locking by creating .npmrc and .nvmrc files in the project root directory and adding "engines" in package.json.
-- Add ESLint configuration (.eslintrc.json)
-- Add Stylelint configuration (.stylelintrc.json). PostCSS must be installed first for Stylelint to work.
-- Add Prettier configuration (.prettierrc, .prettierignore)
-- Add lint-staged configuration ("lint-staged" in package.json)
-- Add Husky, pre-commit and pre-push hooks
-  `npx husky add .husky/pre-commit "yarn lint-staged"`
+- Add engine locking by creating `.npmrc` and `.nvmrc` files in the project root directory and adding `engines` in `package.json`.
+- Add `eslint` configuration (`.eslintrc.json`)
+- Add `stylelint` configuration (`.stylelintrc.json`). `postcss` must be installed first for Stylelint to work.
+- Add `prettier` configuration (`.prettierrc`, `.prettierignore`)
+- Add `lint-staged` configuration (`lint-staged` in `package.json`)
+- Add `husky`, `pre-commit` and `pre-push` hooks<br>
+  `npx husky add .husky/pre-commit "yarn lint-staged"`<br>
   `npx husky add .husky/pre-push "yarn build"`
-- Add prepare script in package.json so that husky installs the git hooks automatically.
-- Add commitlint configuration (commitlint.config.js) and commit-msg git hook.
+- Add `prepare` script in `package.json` so that husky installs the git hooks automatically.
+- Add `commitlint` configuration (`commitlint.config.js`) and `commit-msg` git hook.<br>
   `npx husky add .husky/commit-msg 'npx --no -- commitlint --edit "$1"'`
-- Add project settings in .vscode/settings.json in the project root directory.
-- Add debugging settings in .vscode/launch.json in the project root directory.
-- Install cross-env
-- Install sass
-- Install storybook and add configuration
+- Add project settings in `.vscode/settings.json` in the project root directory.
+- Add debugging settings in `.vscode/launch.json` in the project root directory.
+- Install `cross-env`
+- Install `sass`
+- Install `storybook` and add configuration.<br>
   `npx sb init --builder webpack5`
-- Add webpack-5 to "resolutions" in package.json and do a `yarn install`
+- Add webpack-5 to `resolutions` in package.json and do a `yarn install`
